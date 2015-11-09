@@ -158,11 +158,11 @@ class GoodsController extends Controller
 		
 		//$info = $model -> findAllByPk(10);
 		//$info = $model -> findAllByPk(1,4,9);
-
+		///////////////////////////////////////////
 		//findAll($condition ,$param);
 		//$condition就是sql语句的where条件
 		//$infos = $model -> findAll("goods_name like'诺%' and goods_price > 500");
-		
+		//////////////////////////////////////////
 		//为了避免sql注入，使用占位符填充
 		//$infos = $model -> findAll("goods_name like :name and goods_price > :price",array(":name"=>	'诺%',":price"=>500) );
 		//$model -> goods_name = 'sanming';
@@ -183,7 +183,7 @@ class GoodsController extends Controller
 		//	'offset'=>2,
 		//));	
 		
-		
+		///////////////////////////////////////////
 		//通过criteria实现信息的查询
 		$criteria = new CDbCriteria();
 		$criteria -> select = 'goods_name,goods_price';
