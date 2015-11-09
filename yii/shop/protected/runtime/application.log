@@ -1,0 +1,59 @@
+2015/11/07 21:43:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "catagory".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('catagory')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('catagory')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('goods/catagory')
+#3 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/yii/shop/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/shop/index.php?r=goods/catagory
+---
+2015/11/08 20:52:18 [error] [php] Undefined variable: goods_model (/var/www/yii/shop/protected/modules/backend/views/goods/add.php:28)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): GoodsController->renderFile()
+#1 /var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php(40): GoodsController->renderPartial()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): GoodsController->actionAdd()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/yii/framework/web/CController.php(286): GoodsController->runAction()
+#5 /var/www/yii/framework/web/CController.php(265): GoodsController->runActionWithFilters()
+#6 /var/www/yii/framework/web/CWebApplication.php(282): GoodsController->run()
+#7 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=backend/goods/add
+in /var/www/yii/shop/protected/modules/backend/views/goods/add.php (28)
+in /var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php (40)
+in /var/www/yii/shop/index.php (16)
+2015/11/09 20:11:31 [error] [php] Undefined variable: id (/var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php:86)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(286): GoodsController->runAction()
+#1 /var/www/yii/framework/web/CController.php(265): GoodsController->runActionWithFilters()
+#2 /var/www/yii/framework/web/CWebApplication.php(282): GoodsController->run()
+#3 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=backend/goods/update&id=4
+in /var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php (86)
+in /var/www/yii/shop/index.php (16)
+2015/11/09 20:11:36 [error] [php] Undefined variable: id (/var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php:86)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(286): GoodsController->runAction()
+#1 /var/www/yii/framework/web/CController.php(265): GoodsController->runActionWithFilters()
+#2 /var/www/yii/framework/web/CWebApplication.php(282): GoodsController->run()
+#3 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=backend/goods/update&id=4
+in /var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php (86)
+in /var/www/yii/shop/index.php (16)
+2015/11/09 20:11:42 [error] [php] Undefined variable: id (/var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php:86)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(286): GoodsController->runAction()
+#1 /var/www/yii/framework/web/CController.php(265): GoodsController->runActionWithFilters()
+#2 /var/www/yii/framework/web/CWebApplication.php(282): GoodsController->run()
+#3 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=backend/goods/update&id=6
+in /var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php (86)
+in /var/www/yii/shop/index.php (16)
