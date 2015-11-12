@@ -32,6 +32,37 @@ class GoodsController extends Controller
 		$this->renderPartial('show',array('goods_infos'=>$goods_infos));
 	}
 	
+	
+	/**
+	 * 建立一个测试方法，实现数据分页显示
+	 * Enter description here ...
+	 */
+	
+	function actionShow1()
+	{
+		//获得数据模型
+		$goods_model = Goods::model();
+		
+		//1.获得商品总的记录数目
+		$cnt = $goods_model->count();
+		$per = 6;
+		
+		//2.实例化分页类对象
+		$page = new Pagination($cnt,$per);
+		
+		//3.重新按照分页的样式拼接sql语句进行查询
+		$sql ="select * from {{goods}} $page->limit";
+		$goods_infos = $goods_model -> findAllBySql($sql);
+		//$goods_infos = $goods_model->findAll();
+		//4.获得分页页面列表
+		$page_list = $page->fpage(array(3,4,5,6,7,8));
+		
+		//调用试图模板，给模板传递数据
+		$this->renderPartial('show',array('goods_infos' =>$goods_infos,"page_list"=>$page_list));
+		
+	}
+	
+	
 	function actionAdd()
 	{
 		
