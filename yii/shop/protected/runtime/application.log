@@ -177,3 +177,257 @@ REQUEST_URI=/yii/shop/index.php?r=backend/goods/show
 in /var/www/yii/shop/protected/modules/backend/views/goods/show.php (74)
 in /var/www/yii/shop/protected/modules/backend/controllers/GoodsController.php (32)
 in /var/www/yii/shop/index.php (16)
+2015/11/16 20:25:23 [error] [exception.CException] exception 'CException' with message 'Property "User.password2" is not defined.' in /var/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(161): CComponent->__set('password2', '')
+#1 /var/www/yii/shop/protected/controllers/UserController.php(51): CActiveRecord->__set('password2', '')
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#7 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/register')
+#8 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/yii/shop/index.php(16): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/shop/index.php?r=user/register
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=user/register
+---
+2015/11/16 20:56:19 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:56:19 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:56:19 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:56:19 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:57:01 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:57:01 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:57:01 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:57:01 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:57:45 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:57:45 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:57:45 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:10 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:10 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:10 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:10 [error] [php] preg_match(): Compilation failed: range out of order in character class at offset 10 (/var/www/yii/framework/validators/CRegularExpressionValidator.php:53)
+Stack trace:
+#0 /var/www/yii/framework/base/CModel.php(159): CRegularExpressionValidator->validate()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(808): User->validate()
+#2 /var/www/yii/shop/protected/controllers/UserController.php(56): User->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /var/www/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=user/register
+in /var/www/yii/shop/protected/controllers/UserController.php (56)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:22 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:22 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:22 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:22 [error] [php] preg_match(): Compilation failed: range out of order in character class at offset 10 (/var/www/yii/framework/validators/CRegularExpressionValidator.php:53)
+Stack trace:
+#0 /var/www/yii/framework/base/CModel.php(159): CRegularExpressionValidator->validate()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(808): User->validate()
+#2 /var/www/yii/shop/protected/controllers/UserController.php(56): User->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /var/www/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=user/register
+in /var/www/yii/shop/protected/controllers/UserController.php (56)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:27 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:27 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:27 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:41 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:41 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:41 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:58:41 [error] [php] preg_match(): Compilation failed: range out of order in character class at offset 10 (/var/www/yii/framework/validators/CRegularExpressionValidator.php:53)
+Stack trace:
+#0 /var/www/yii/framework/base/CModel.php(159): CRegularExpressionValidator->validate()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(808): User->validate()
+#2 /var/www/yii/shop/protected/controllers/UserController.php(56): User->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /var/www/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=user/register
+in /var/www/yii/shop/protected/controllers/UserController.php (56)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:59:39 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:59:39 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:59:39 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:59:39 [error] [php] preg_match(): Compilation failed: range out of order in character class at offset 11 (/var/www/yii/framework/validators/CRegularExpressionValidator.php:53)
+Stack trace:
+#0 /var/www/yii/framework/base/CModel.php(159): CRegularExpressionValidator->validate()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(808): User->validate()
+#2 /var/www/yii/shop/protected/controllers/UserController.php(56): User->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /var/www/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=user/register
+in /var/www/yii/shop/protected/controllers/UserController.php (56)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:59:47 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:59:47 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 20:59:47 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:00:31 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:00:31 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:00:31 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:00:35 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:00:35 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:00:35 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:02:05 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:02:05 [warning] [application] Failed to set unsafe attribute "user_hobby" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:02:05 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:24 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (58)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:24 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (58)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:30 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (58)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:30 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (58)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:32 [error] [php] implode(): Invalid arguments passed (/var/www/yii/shop/protected/controllers/UserController.php:53)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/CController.php(286): UserController->runAction()
+#2 /var/www/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#3 /var/www/yii/framework/web/CWebApplication.php(282): UserController->run()
+#4 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=user/register
+in /var/www/yii/shop/protected/controllers/UserController.php (53)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:37 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (58)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:37 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (58)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:41 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (58)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:15:41 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (58)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:17:04 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (59)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:17:04 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (59)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:17:07 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (59)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:17:07 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (59)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:18:49 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (59)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:18:49 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (59)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:19:51 [warning] [application] Failed to set unsafe attribute "user_sex" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (59)
+in /var/www/yii/shop/index.php (16)
+2015/11/16 21:19:51 [warning] [application] Failed to set unsafe attribute "user_introduce" of "User".
+in /var/www/yii/shop/protected/controllers/UserController.php (59)
+in /var/www/yii/shop/index.php (16)

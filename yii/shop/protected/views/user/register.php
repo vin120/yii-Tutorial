@@ -5,43 +5,58 @@
                 <div class="usBox">
                     <div class="usBox_2 clearfix">
                         <div class="logtitle3"></div>
-                        <?php $form = $this -> beginWidget("CActiveForm"); ?>
+                        <?php $form = $this -> beginWidget("CActiveForm",array(
+                        							'enableClientValidation'=>true,
+                        							'clientOptions'=>array(
+                        										'validateOnSubmit'=>true,
+                        							),
+					)); ?>
+									                        
                          <table cellpadding="5" cellspacing="3" style="text-align:left; width:100%; border:0;">
                                 <tbody>
                                     <tr>
                                         <td style="width:13%; text-align: right;">
-                                            <?php echo $form->label($user_model,'username'); ?>
+                                            <?php echo $form->labelEx($user_model,'username'); ?>
                                         </td>
 
                                         <td style="width:87%;">
                                                         
                                             <?php echo $form->textField($user_model,'username',array('class'=>'inputBg','id'=>'User_username')); ?>
+                                            
+                                            <!-- 表单验证失败显示错误信息 -->
+                                            <?php echo $form->error($user_model,'username'); ?>
+                                            
+                                            
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="right">
-                                            <?php echo $form->label($user_model,'password'); ?>
+                                            <?php echo $form->labelEx($user_model,'password'); ?>
                                        
                                         </td>
 
                                         <td>
                                             <?php echo $form->passwordField($user_model,'password',array('class'=>'inputBg','id'=>'User_password')); ?>        
+                                            <?php echo $form->error($user_model,'password'); ?>
                                         </td>
                                     </tr>
                                     <tr>
+                                     
                                         <td align="right">
-                                            <label for="User_password2">密码确认</label>
+                                    		<?php echo $form->label($user_model,'password2'); ?> 
                                         </td>
 
                                         <td>
-                                            <input class="inputBg" size="25" name="User[password2]" id="User_password2" type="password" />
+                                           	<?php echo $form->passwordField($user_model,'password2',array('class'=>'inputBg','id'=>'User_password2')); ?>        
+                                           	<?php echo $form->error($user_model,'password2'); ?>
                                         </td>
-
+ 								
                                     </tr>
                                     <tr>
                                         <td align="right"> <?php echo $form->label($user_model,'user_email'); ?></td>
                                         <td>                   
                                              <?php echo $form->textField($user_model,'user_email',array('class'=>'inputBg','id'=>'User_user_email')); ?>    
+                                             <?php echo $form->error($user_model,'user_email'); ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -49,13 +64,15 @@
                                         <td align="right"> <?php echo $form->label($user_model,'user_qq'); ?></td>
                                         <td>
                                               <?php echo $form->textField($user_model,'user_qq',array('class'=>'inputBg','id'=>'User_user_qq')); ?>   
+                                               <?php echo $form->error($user_model,'user_qq'); ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="right"> <?php echo $form->label($user_model,'user_tel'); ?></td>
                                         <td>
                     
-                                             <?php echo $form->textField($user_model,'user_tel',array('class'=>'inputBg','id'=>'User_user_tel')); ?> 
+                                             <?php echo $form->textField($user_model,'user_tel',array('class'=>'inputBg','id'=>'User_user_tel','maxlength'=>11)); ?> 
+                                              <?php echo $form->error($user_model,'user_tel'); ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -72,6 +89,7 @@
 
                                         <td>
                                             <?php echo $form->dropDownList($user_model,"user_xueli",$xueli); ?>
+                                             <?php echo $form->error($user_model,'user_xueli'); ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -80,6 +98,7 @@
 
                                         <td>
                                            <?php echo $form-> checkBoxList($user_model,'user_hobby',$hobby,array('separator'=>'&nbsp;')) ;?>                              
+                                            <?php echo $form->error($user_model,'user_hobby'); ?>
                                         </td>
                                     </tr>
                                     <tr>
