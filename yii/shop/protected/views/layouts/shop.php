@@ -17,12 +17,31 @@
 
             <div id="topNav" class="clearfix">
                 <div style="float: left;"> 
+                <!--判断用户是否登录系统-->
+                <?php 
+                    //在user组件里有一个方法getIsGuest()，判断用户是否游客
+                    if(Yii::app()->user->getIsGuest()){ 
+                ?>
                     <font id="ECS_MEMBERZONE">
                         <div id="append_parent"></div>
                         欢迎光临本店&nbsp;
                         <a href="./index.php?r=user/login"> 登录</a>
                         <a href="./index.php?r=user/register">注册</a>
                     </font>
+                <?php 
+                    }else { 
+                ?>
+
+                    <font id="ECS_MEMBERZONE">
+                        <div id="append_parent"></div>
+                        <font class="f4_b"><?php echo Yii::app()->user->name; ?></font>, 欢迎您回来！
+                        <a href="#">用户中心</a>
+                        <a href="./index.php?r=user/logout">退出</a>
+                <?php 
+                    }
+                ?>
+                    </font>
+
                 </div>
                 <div style="float: right;">
                     <a href="#">查看购物车</a>

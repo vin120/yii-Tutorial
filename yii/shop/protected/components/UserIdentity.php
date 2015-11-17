@@ -17,17 +17,37 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
+		//在这个地方来校验用户名和密码的真实性
+		//是否有此用户名存在
+		//find()如果没有查询出来信息，会返回null
+		//findAll() 空数据会返回空数组
+		//根据用户名查询是否有一个用户信息
+		$user_model = User::model()->find('username=:name',array(":name"=>$this->username));
+
+		//如果用户名不存在
+		if($user_model === null)
+		{
+			$this->errorCode = self::ERROR_USERNAME_INVALID;
+			return false;
+		}
+		else if ($user_model->password !== md5($this->password))
+		{
+			//密码判断
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+			return false;
+		}
 		else
+		{
 			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;
+			return true;
+		}
+
+		// if(!isset($users[$this->username]))
+		// 	$this->errorCode=self::ERROR_USERNAME_INVALID;
+		// elseif($users[$this->username]!==$this->password)
+		// 	$this->errorCode=self::ERROR_PASSWORD_INVALID;
+		// else
+		// 	$this->errorCode=self::ERROR_NONE;
+		// return !$this->errorCode;
 	}
 }

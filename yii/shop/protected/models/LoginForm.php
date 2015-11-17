@@ -22,11 +22,15 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('username, password', 'required'),
+			array('username', 'required','message'=>'用户名必须填写'),
+			array('password', 'required','message'=>'密码必须填写'),
 			// rememberMe needs to be a boolean
-			array('rememberMe', 'boolean'),
+			//array('rememberMe', 'boolean'),
 			// password needs to be authenticated
-			array('password', 'authenticate'),
+			//array('password', 'authenticate'),
+
+			//校验用户名和密码的真实性，通过自定义方法实现校验
+			array('password','authenticate'),
 		);
 	}
 
@@ -36,7 +40,9 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'rememberMe'=>'Remember me next time',
+			'username' => '用户名',
+			'password' => '密 码',
+			//'rememberMe'=>'Remember me next time',
 		);
 	}
 
@@ -50,7 +56,7 @@ class LoginForm extends CFormModel
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+				$this->addError('password','用户名或密码不存在.');
 		}
 	}
 
