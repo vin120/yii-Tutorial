@@ -2,9 +2,34 @@
 
 class UserController extends Controller
 {
-	/**
+
+   /*
+	*     验证码生成
+	*	   以下代码的意思是：在当前控制器里，以方法的形式访问其他类
+	*	   我们访问 ./inedx.php?r=user/captcha就会访问到以下方法的CCaptchaAction
+	*		会走CCaptchaAction类的run()方法
+	*
+	*      谁会调用 user/captcha这个路由?
+	*	    试图表单会间接调用($this->widget('CCaptcha'))
+	*/
+	function actions()
+	{
+		return array(
+			'captcha'=>array(
+					'class'=>'system.web.widgets.captcha.CCaptchaAction',
+					'width'=>120,
+					'height'=>50,
+				),
+
+
+			);
+	}
+
+
+   /*
 	*		用户登录
 	*/
+
 	function actionLogin()
 	{
 		//创建登录模型对象
@@ -25,16 +50,14 @@ class UserController extends Controller
 
 		}
 
-
-
 		$this->render('login',array('user_login'=>$user_login));
 	}
 
-	/*
-	 *	实现用户注册功能
-	 *	1.展现注册表单
-	 *	2.收集数据，校验数据，存储数据
-	 */
+   /*
+	*	实现用户注册功能
+	*	1.展现注册表单
+	*	2.收集数据，校验数据，存储数据
+	*/
 	function actionRegister()
 	{
 		//实例化数据模型对象user
@@ -96,19 +119,18 @@ class UserController extends Controller
 	//	$this->renderPartial('register');
 	}
 
-	/*
-	 * 用户退出系统	
-	 */
+
+   /*
+	* 用户退出系统	
+	*/
 	function actionLogout()
 	{
 		//删除session信息
 		Yii::app()->session->clear();  //删除内存里的session变量信息
 		Yii::app()->session->destroy(); //删除服务器里的session文件
 		$this->redirect('./index.php');
-
 	}
-	
-	
+
 }
 
 ?>

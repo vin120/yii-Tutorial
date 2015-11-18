@@ -115,6 +115,7 @@ class CCaptchaAction extends CAction
 	 */
 	public function run()
 	{
+		$this->fixedVerifyCode = substr(md5(mt_rand(1,10000)),0,4);
 		if(isset($_GET[self::REFRESH_GET_VAR]))  // AJAX request for regenerating code
 		{
 			$code=$this->getVerifyCode(true);

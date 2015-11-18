@@ -1,3 +1,8 @@
+<style type="text/css">
+    div .errorMessage{color:red;}
+    label .required{color:red;}
+</style>
+
             <!--放入view具体内容-->
 
             <div class="block box">

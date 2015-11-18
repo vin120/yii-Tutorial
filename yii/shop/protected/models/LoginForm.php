@@ -10,6 +10,7 @@ class LoginForm extends CFormModel
 	public $username;
 	public $password;
 	public $rememberMe;
+	public $verifyCode; //验证码
 
 	private $_identity;
 
@@ -25,12 +26,15 @@ class LoginForm extends CFormModel
 			array('username', 'required','message'=>'用户名必须填写'),
 			array('password', 'required','message'=>'密码必须填写'),
 			// rememberMe needs to be a boolean
-			//array('rememberMe', 'boolean'),
+			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
 			//array('password', 'authenticate'),
 
 			//校验用户名和密码的真实性，通过自定义方法实现校验
 			array('password','authenticate'),
+
+			//对验证码进行校验
+			array('verifyCode','captcha','message'=>'请输入正确的验证码'),
 		);
 	}
 
@@ -42,7 +46,8 @@ class LoginForm extends CFormModel
 		return array(
 			'username' => '用户名',
 			'password' => '密 码',
-			//'rememberMe'=>'Remember me next time',
+			'rememberMe'=>'记住登录状态',
+			'verifyCode'=>'验证码',
 		);
 	}
 
