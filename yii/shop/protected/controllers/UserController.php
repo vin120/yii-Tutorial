@@ -131,6 +131,61 @@ class UserController extends Controller
 		$this->redirect('./index.php');
 	}
 
+	/*
+	 * session使用
+	 *
+	 */
+
+	function actionS1()
+	{
+		//设置session,通过session组件设置
+		Yii::app()->session['username'] = 'zhangsan';
+		Yii::app()->session['useraddr'] = 'beijing';
+	}
+
+	/*
+	 *使用session
+	 */
+	function actionS2()
+	{
+		echo Yii::app()->session['username'];
+		echo Yii::app()->session['useraddr'];
+	}
+
+	function actionS3()
+	{
+		//删除一个session
+		//unset(Yii::app()->session['useraddr']);
+
+		//删除全部session
+		Yii::app()->session->clear(); //删除session变量
+		Yii::app()->session->destroy(); //删除服务器的session信息
+	}
+
+	/*
+	 * Cookie的使用
+	 */
+	function actionC1()
+	{
+		//设置cookie
+		$ck = new CHttpCookie('hobby','篮球，足球');
+		$ck->expire = time() + 3600;
+		//把$ck对象放入cookie组件里
+		Yii::app()->request->cookies = $ck;
+	}
+
+	function actionC2()
+	{
+		//访问cookie
+		echo Yii::app()->request->cookies['hobby'];
+	}
+
+
+	function actionC3()
+	{
+		//删除cookies
+		unset(Yii::app()->request->cookies['hobby']);
+	}
 }
 
 ?>
