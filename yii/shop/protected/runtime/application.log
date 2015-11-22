@@ -544,3 +544,247 @@ REQUEST_URI=/yii/shop/index.php?r=user/login
 in /var/www/yii/shop/protected/views/user/login.php (42)
 in /var/www/yii/shop/protected/controllers/UserController.php (53)
 in /var/www/yii/shop/index.php (16)
+2015/11/22 20:24:33 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.attribute" is not defined.' in /var/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(17): CComponent->__set('attribute', Array)
+#1 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogin()
+#2 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#6 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#7 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/yii/shop/index.php(16): CApplication->run()
+#9 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/manager/login
+---
+2015/11/22 20:49:21 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE username=:name LIMIT 1. Bound with :name='asdasd'.
+in /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php (25)
+in /var/www/yii/shop/protected/modules/backend/models/LoginForm.php (55)
+in /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php (20)
+2015/11/22 20:49:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE username=:name LIMIT 1. Bound with :name='asdasd'' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php(25): CActiveRecord->find('username=:name', Array)
+#4 /var/www/yii/shop/protected/modules/backend/models/LoginForm.php(55): UserIdentity->authenticate()
+#5 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#6 /var/www/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(20): CModel->validate()
+#9 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogin()
+#10 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#15 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/yii/shop/index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/manager/login
+---
+2015/11/22 20:49:40 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE username=:name LIMIT 1. Bound with :name='admin'.
+in /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php (25)
+in /var/www/yii/shop/protected/modules/backend/models/LoginForm.php (55)
+in /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php (20)
+2015/11/22 20:49:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE username=:name LIMIT 1. Bound with :name='admin'' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php(25): CActiveRecord->find('username=:name', Array)
+#4 /var/www/yii/shop/protected/modules/backend/models/LoginForm.php(55): UserIdentity->authenticate()
+#5 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#6 /var/www/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(20): CModel->validate()
+#9 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogin()
+#10 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#15 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/yii/shop/index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/manager/login
+---
+2015/11/22 20:50:37 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE username=:name LIMIT 1. Bound with :name='asd'.
+in /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php (25)
+in /var/www/yii/shop/protected/modules/backend/models/LoginForm.php (55)
+in /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php (20)
+2015/11/22 20:50:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE username=:name LIMIT 1. Bound with :name='asd'' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php(25): CActiveRecord->find('username=:name', Array)
+#4 /var/www/yii/shop/protected/modules/backend/models/LoginForm.php(55): UserIdentity->authenticate()
+#5 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#6 /var/www/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(20): CModel->validate()
+#9 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogin()
+#10 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#15 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/yii/shop/index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/manager/login
+---
+2015/11/22 20:54:46 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE username=:name LIMIT 1. Bound with :name='123123'.
+in /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php (25)
+in /var/www/yii/shop/protected/modules/backend/models/LoginForm.php (55)
+in /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php (20)
+2015/11/22 20:54:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE username=:name LIMIT 1. Bound with :name='123123'' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php(25): CActiveRecord->find('username=:name', Array)
+#4 /var/www/yii/shop/protected/modules/backend/models/LoginForm.php(55): UserIdentity->authenticate()
+#5 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#6 /var/www/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(20): CModel->validate()
+#9 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogin()
+#10 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#15 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/yii/shop/index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/manager/login
+---
+2015/11/22 20:56:36 [error] [exception.CException] exception 'CException' with message 'Property "Manager.password" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('password')
+#1 /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php(33): CActiveRecord->__get('password')
+#2 /var/www/yii/shop/protected/modules/backend/models/LoginForm.php(55): UserIdentity->authenticate()
+#3 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /var/www/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(20): CModel->validate()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogin()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#13 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/yii/shop/index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/manager/login
+---
+2015/11/22 21:04:37 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'mg_name' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE mg_name=:name LIMIT 1. Bound with :name='admin'.
+in /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php (25)
+in /var/www/yii/shop/protected/modules/backend/models/LoginForm.php (55)
+in /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php (20)
+2015/11/22 21:04:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'mg_name' in 'where clause'. The SQL statement executed was: SELECT * FROM `sw_manager` `t` WHERE mg_name=:name LIMIT 1. Bound with :name='admin'' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/yii/shop/protected/modules/backend/components/UserIdentity.php(25): CActiveRecord->find('mg_name=:name', Array)
+#4 /var/www/yii/shop/protected/modules/backend/models/LoginForm.php(55): UserIdentity->authenticate()
+#5 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#6 /var/www/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(20): CModel->validate()
+#9 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogin()
+#10 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#15 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/yii/shop/index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/manager/login
+---
+2015/11/22 21:05:06 [error] [php] Undefined variable: duration (/var/www/yii/shop/protected/modules/backend/models/LoginForm.php:74)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/CController.php(286): ManagerController->runAction()
+#2 /var/www/yii/framework/web/CController.php(265): ManagerController->runActionWithFilters()
+#3 /var/www/yii/framework/web/CWebApplication.php(282): ManagerController->run()
+#4 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+in /var/www/yii/shop/protected/modules/backend/models/LoginForm.php (74)
+in /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php (20)
+in /var/www/yii/shop/index.php (16)
+2015/11/22 21:05:24 [error] [php] Undefined variable: duration (/var/www/yii/shop/protected/modules/backend/models/LoginForm.php:74)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/CController.php(286): ManagerController->runAction()
+#2 /var/www/yii/framework/web/CController.php(265): ManagerController->runActionWithFilters()
+#3 /var/www/yii/framework/web/CWebApplication.php(282): ManagerController->run()
+#4 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/yii/shop/index.php(16): CWebApplication->run()
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/login
+in /var/www/yii/shop/protected/modules/backend/models/LoginForm.php (74)
+in /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php (20)
+in /var/www/yii/shop/index.php (16)
+2015/11/22 21:11:27 [error] [exception.CException] exception 'CException' with message 'CHttpSession and its behaviors do not have a method or closure named "destory".' in /var/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(40): CComponent->__call('destory', Array)
+#1 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(40): CHttpSession->destory()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogout()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('logout')
+#7 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#8 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/yii/shop/index.php(16): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/logout
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/index/head
+---
+2015/11/22 21:11:34 [error] [exception.CException] exception 'CException' with message 'CHttpSession and its behaviors do not have a method or closure named "destory".' in /var/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(40): CComponent->__call('destory', Array)
+#1 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(40): CHttpSession->destory()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogout()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('logout')
+#7 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#8 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/yii/shop/index.php(16): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/logout
+---
+2015/11/22 21:11:50 [error] [exception.CException] exception 'CException' with message 'CHttpSession and its behaviors do not have a method or closure named "destory".' in /var/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(40): CComponent->__call('destory', Array)
+#1 /var/www/yii/shop/protected/modules/backend/controllers/ManagerController.php(40): CHttpSession->destory()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): ManagerController->actionLogout()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('logout')
+#7 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/manager...')
+#8 /var/www/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/yii/shop/index.php(16): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/shop/index.php?r=backend/manager/logout
+HTTP_REFERER=http://localhost/yii/shop/index.php?r=backend/index/head
+---

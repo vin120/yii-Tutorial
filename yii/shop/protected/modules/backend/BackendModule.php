@@ -12,6 +12,13 @@ class BackendModule extends CWebModule
 			'backend.models.*',
 			'backend.components.*',
 		));
+
+		//为后台登录管理员设置session名字前缀信息
+		Yii::app()->setComponents(array(
+			'user'=>array(
+				'stateKeyPrefix'=>'backend',
+			),
+		));
 	}
 
 	public function beforeControllerAction($controller, $action)
